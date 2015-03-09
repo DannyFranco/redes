@@ -1,0 +1,72 @@
+//Becerra Rodriguez Aurelio
+//Benavidez Rodriguez Christian Armando
+//Meza Mendoza Aurelio
+
+/*
+ ---------------------------------------------
+  LED RGB - Tabla de Colores
+ ---------------------------------------------
+*/
+ 
+//--------------------------------------------------
+//Declaramos los puertos de entradas y salidas y variables
+//--------------------------------------------------
+int ledRojo = 9; //Declarar Pin LED Rojo
+int ledVerde=10; //Declarar Pin LED Verde
+int ledAzul=11;  //Declarar Pin LED Azul
+ 
+//------------------------------------
+//Funcion principal
+//------------------------------------
+void setup() // Se ejecuta cada vez que el Arduino se inicia
+{
+  pinMode(ledRojo,OUTPUT);  //El LED Rojo como salida
+  pinMode(ledVerde,OUTPUT); //El LED Verde como salida
+  pinMode(ledAzul,OUTPUT);  //El LED Azul como salida
+}
+ 
+//------------------------------------
+//Funcion ciclicla
+//------------------------------------
+void loop() // Esta funcion se mantiene ejecutando
+{           //  cuando se da energia al Arduino
+ 
+   // Se llama a la funcion Color que recibe
+   // 1er posicion: Rojo
+   // 2da posición: Verde
+   // 3ra posición: Azul
+ 
+   color(255,0,0);     //Rojo
+   delay(1000);
+ 
+   color(0,255,0);     //Verde
+   delay(1000);
+ 
+   color(0,0,255);     //Azul
+   delay(1000);
+ 
+   color(255,255,255); //Blanco
+   delay(1000);
+ 
+   color(255,0,255);   //Magenta
+   delay(1000);
+ 
+   color(255,128,0);  //Naranaja
+   delay(1000);
+ 
+}
+ 
+//------------------------------------
+//Funcion color
+//------------------------------------
+void color(int rojo, int verde, int azul){
+ 
+    //Escritura del color Rojo
+    analogWrite(ledRojo, 255-rojo);
+ 
+    //Escritura del color Verde
+    analogWrite(ledVerde, 255-verde);
+ 
+    //Escritura del color Azul
+    analogWrite(ledAzul, 255-azul);
+}
